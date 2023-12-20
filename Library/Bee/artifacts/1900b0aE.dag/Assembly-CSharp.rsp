@@ -353,6 +353,7 @@
 -analyzer:"D:/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Car.cs"
+"Assets/Scripts/HIndernis.cs"
 "Assets/Scripts/Lightswitch.cs"
 "Assets/Scripts/Ziellinie.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

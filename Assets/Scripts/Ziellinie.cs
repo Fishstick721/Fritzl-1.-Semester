@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class Ziellinie : MonoBehaviour
 {
     public Text txtBestTime;
+    public Text counterText; 
+    public GameObject[] hindernisse; 
     float time = 0;
     float bestTime = float.MaxValue;
-    
 
+    void Start()
+    {
+        
+        hindernisse = GameObject.FindGameObjectsWithTag("Hindernis");
+    }
 
     void Update()
     {
@@ -18,13 +24,25 @@ public class Ziellinie : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (time < bestTime)
+        if (other.CompareTag("Player")) 
         {
-            bestTime = time;
-            txtBestTime.text = "Best Time : " + bestTime.ToString("0.##") + " Sekunden";
-        }
-       
-        time = 0;
-    }
+            if (time < bestTime)
+            {
+                bestTime = time;
+                txtBestTime.text = "Best Time : " + bestTime.ToString("0.##") + " Sekunden";
+            }
+            time = 0;
+            time = 0;
 
+           
+            Hindernis.counter = 3;
+            counterText.text = Hindernis.counter.ToString();
+
+            
+            foreach (GameObject hindernis in hindernisse)
+            {
+                hindernis.SetActive(true);
+            }
+        }
+    }
 }
